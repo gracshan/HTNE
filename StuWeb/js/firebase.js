@@ -14,7 +14,6 @@ function createNewProject(doc){
     li.appendChild(cross);
     projectList.appendChild(li);
     addBtn(cross);
-    addWidth(name);
     //deleting project
     cross.addEventListener('click',function(e){
         e.stopPropagation();
@@ -45,9 +44,5 @@ db.collection('project').orderBy('project_name').onSnapshot(snapshot =>{
 });
 
 function addBtn(button){
-    button.setAttribute('class','btn btn-dark');
-    button.setAttribute('class','width1');
-}
-function addWidth(name){
-    name.setAttribute('class','width2');
+    button.setAttribute('class','btn btn-outline-light width1');
 }
