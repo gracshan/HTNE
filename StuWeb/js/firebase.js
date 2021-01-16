@@ -46,3 +46,13 @@ db.collection('project').orderBy('project_name').onSnapshot(snapshot =>{
 function addBtn(button){
     button.setAttribute('class','btn btn-outline-light width1');
 }
+
+// add lofi hip-hop music streaming
+function play(){
+    document.getElementById('lofi').display:true;
+}
+
+//remove lofi hip-hop streaming
+function stop(){
+    document.getElementById('lofi').style.display="none";
+}
