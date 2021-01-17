@@ -30,19 +30,9 @@
 <!-- Nav bar top -->
 
     <div class="container-fluid nav-bar">
-      <button type="button" class="btn btn-outline-light music" data-toggle="modal" data-target="#play" id="music-streaming">Lofi Hip-Hop Music Streaming</button>
       <button type="button" class="btn btn-outline-light user-button" data-toggle="modal" data-target="#user-modal">User</button>
     </div>
 <!-- Nav bar top ends -->
-
-<!--Lofi Hip-Hop Music Streaming-->
-<div class="music-streaming" style="display:none; position: absolute; right: 1200px;" id="play">
-  <iframe width="860" height="615" src="https://www.youtube.com/embed/-FlxM_0S2lA" frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <div>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal"></button>
-  </div>
-</div>
 
 <!-- modal for user data -->
     <div class="modal fade" id="user-modal" >
@@ -84,6 +74,20 @@
         </div>
     </div>
     
+<!-- modal for user data -->
+<div class="modal fade" id="music-modal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+            <div class="music-streaming" id="play">
+                <iframe width="860" height="615" src="https://www.youtube.com/embed/-FlxM_0S2lA" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
 
 
     <div class="side-div">
@@ -93,6 +97,9 @@
         <ul id="project-list" class="project-list"></ul>
         <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#new-project">
             <Strong>+</Strong>
+          </button>
+          <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#music-modal">
+            Lofi Hip-Hop Music Streaming
           </button>
     </div>
     </div>
@@ -130,5 +137,6 @@
     <script src="js/firebase.js"></script>
   </body>
 </html>
+
 
 
