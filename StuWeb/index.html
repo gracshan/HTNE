@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User</title>
+    <title>StuWeb User</title>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
@@ -12,7 +12,6 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
-
 
     <link
       rel="stylesheet"
@@ -74,7 +73,7 @@
         </div>
     </div>
     
-<!-- modal for user data -->
+<!-- modal for music data -->
 <div class="modal fade" id="music-modal">
     <div class="modal-dialog">
     <div class="modal-content">
@@ -89,6 +88,17 @@
     </div>
 </div>
 
+<!-- modal for academic calendar -->
+<div class="modal fade" id="calendar-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+    </div>
+  </div>
+</div>
+
+
+
 
     <div class="side-div">
     <div class="side-bar">
@@ -100,6 +110,9 @@
           </button>
           <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#music-modal">
             Lofi Hip-Hop Music Streaming
+          </button>
+          <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#calendar-modal">
+            Academic Calendar
           </button>
     </div>
     </div>
@@ -137,6 +150,7 @@
     <script src="js/firebase.js"></script>
   </body>
 </html>
+
 
 
 
