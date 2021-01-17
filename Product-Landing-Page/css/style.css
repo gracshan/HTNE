@@ -29,6 +29,20 @@
 			text-decoration: none;
 		}
 
+		.start{
+			background-color: #3ac984;
+			color: white;
+			text-decoration: none;
+			padding: 30px; 
+			border-radius: 10px;
+			font-size:larger;
+			font-weight: 700;"
+		}
+		.start:hover{
+			background-color: #21a163;
+			color: white;
+		}
+
 	strong, b {
 		font-weight: 700;
 	}
