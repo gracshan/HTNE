@@ -75,3 +75,6 @@ function play(){
 function stop(){
     document.getElementById('lofi').style.display="none";
 }
+
+
+
