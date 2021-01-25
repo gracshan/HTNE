@@ -23,16 +23,24 @@ function createNewProject(doc){
         let id = e.target.parentElement.getAttribute('data-id');
         db.collection('project').doc(id).delete();
     });
+    
+    
 }
+
+
+
 // add project
 form.addEventListener('submit',function(event) {
     event.preventDefault();
     db.collection('project').add({
         project_name: form.name.value,
     });
+    
     form.name.value = '';
 
 }); 
+
+
 
 db.collection('project').orderBy('project_name').onSnapshot(snapshot =>{
     let changes = snapshot.docChanges();
@@ -43,17 +51,25 @@ db.collection('project').orderBy('project_name').onSnapshot(snapshot =>{
             let li = projectList.querySelector('[data-id='+ change.doc.id +']');
             projectList.removeChild(li);
         }
+        
     });
+    
 });
+
+
 
 function addBtn(button){
     button.setAttribute('class','btn btn-outline-light width1');
 }
 
+
+
 // add lofi hip-hop music streaming
 function play(){
     document.getElementById('lofi').display:true;
 }
+
+
 
 //remove lofi hip-hop streaming
 function stop(){
