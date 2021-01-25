@@ -7,10 +7,12 @@ function createNewProject(doc){
     let name = document.createElement('span');
     let cross = document.createElement('button');
     
+    
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().project_name;
     cross.textContent = "x";
 
+    
     li.appendChild(name);
     li.appendChild(cross);
     projectList.appendChild(li);
