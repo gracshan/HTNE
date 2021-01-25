@@ -2,6 +2,7 @@ var uid ;
 var project_id ;
 var task_id ;
 
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
@@ -20,25 +21,34 @@ auth.onAuthStateChanged(user => {
               
               projectList.removeChild(li);
           }
+        
       });
+      
   });
+    
   } 
+  
+  
   
   else {
     console.log('out');
     console.log('user logged out');
   }
+  
 })
+
 
 // signup
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
   
+  
   // get user info
   const email = signupForm['signup-email'].value;
   const password = signupForm['signup-password'].value;
 
+  
   // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
     // close the signup modal & reset form
@@ -46,9 +56,13 @@ signupForm.addEventListener('submit', (e) => {
     
     
   });
+  
+  
   signupForm.reset();
 
+  
 });
+
 
 // logout
 const logout = document.querySelector('#signout-button');
@@ -58,15 +72,18 @@ logout.addEventListener('click', (e) => {
 
 });
 
+
 // login
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
   
+  
   // get user info
   const email = loginForm['login-email'].value;
   const password = loginForm['login-password'].value;
 
+  
   // log the user in
   auth.signInWithEmailAndPassword(email, password).then((cred) => {
     // close the signup modal & reset form
@@ -75,6 +92,7 @@ loginForm.addEventListener('submit', (e) => {
   });
   loginForm.reset();
 
+  
 })
 
 
@@ -85,11 +103,13 @@ loginForm.addEventListener('submit', (e) => {
 const projectList = document.querySelector('#project-list');
 const form = document.querySelector('#add-project-form');
 
+
 function createNewProject(doc){
     let li = document.createElement('li');
     let name = document.createElement('span');
     let cross = document.createElement('button');
-    
+   
+  
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().project_name;
     cross.textContent = "X";
@@ -103,7 +123,10 @@ function createNewProject(doc){
         let id = e.target.parentElement.getAttribute('data-id');
         db.collection('project').doc(id).delete();
     });
+  
 }
+
+
 // add project
 form.addEventListener('submit',function(event) {
     
@@ -117,10 +140,12 @@ form.addEventListener('submit',function(event) {
     form.name.value = '';
 });
 
+
 function addBtn(cross){
     cross.style.float="right";
     cross.setAttribute('class', 'btn btn-outline-dark')
 }
+
 
 // tasks
   
@@ -143,13 +168,19 @@ auth.onAuthStateChanged(user => {
 
               taskList.removeChild(li);
           }
+        
       });
+      
   });
+    
   } 
 
+  
   else {
   }
 })
+
+
 
 const taskList = document.querySelector('#list-task');
   const taskform = document.querySelector('#add-task-form');
@@ -160,10 +191,12 @@ const taskList = document.querySelector('#list-task');
       let name1 = document.createElement('span');
       let cross1 = document.createElement('button');
 
+    
       li1.setAttribute('data-id', doc.id);
       name1.textContent = doc.data().task_name;
       cross1.textContent = "X";
       
+    
       li1.appendChild(name1);
       li1.appendChild(cross1);
       taskList.appendChild(li1);
@@ -174,7 +207,10 @@ const taskList = document.querySelector('#list-task');
           let id = e.target.parentElement.getAttribute('data-id');
           db.collection('tasks').doc(id).delete();
       });
+    
+    
   }
+
 
   // add task
   taskform.addEventListener('submit',function(event) {
@@ -187,6 +223,10 @@ const taskList = document.querySelector('#list-task');
       });
       taskform.name.value = '';
   })
+
+
+
+
 
 
 
