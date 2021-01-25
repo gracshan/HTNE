@@ -1,6 +1,7 @@
 const projectList = document.querySelector('#project-list');
 const form = document.querySelector('#add-project-form');
 
+
 function createNewProject(doc){
     let li = document.createElement('li');
     let name = document.createElement('span');
